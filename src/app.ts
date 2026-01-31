@@ -10,7 +10,7 @@ import { orderRouter } from "./modules/order/order.route";
 const app:Application = express();
 
 app.use(cors({
-    origin: process.env.APP_URL || "http://localhost:5000",
+    origin: process.env.APP_URL || "http://localhost:3000",
     credentials: true
 }))
 

@@ -10,8 +10,8 @@ router.put("/seller/:idParam", routeAuth(UserRole.SELLER), medicineController.up
 
 router.delete("/seller/:idParam", routeAuth(UserRole.SELLER), medicineController.deleteMedicine);
 
-router.get("/", routeAuth(UserRole.ADMIN, UserRole.SELLER, UserRole.USER), medicineController.getAllMedicine);
+router.get("/", medicineController.getAllMedicine);
 
-router.get("/:idParam", routeAuth(UserRole.ADMIN, UserRole.SELLER, UserRole.USER), medicineController.getMedicineById);
+router.get("/:idParam",  medicineController.getMedicineById);
 
 export const medicineRouter :Router = router

@@ -65,6 +65,8 @@ model Medicine {
   price       Float
   stock       Int
 
+  featured    Boolean  @default(false)
+
   // Foreign keys
   categoryId String
   sellerId   String

@@ -88,16 +88,12 @@ const deleteMedicine = async(id :string) =>{
     return medicine;
 }
 
-const getAllMedicine = async() =>{
-    const medicines= await prisma.medicine.findMany(
-        {
-            orderBy:{
-                createdAt:"desc"
-            }
-        }
-    )
-    return medicines
-}
+const getAllMedicine = async (featured?: boolean) => {
+  return prisma.medicine.findMany({
+    where: featured === undefined ? {} : { featured },
+  });
+};
+
 
 
 const getMedicineById = async(id : string) =>{

@@ -93,29 +93,33 @@ const deleteMedicine = async (req: Request, res: Response) => {
 
 const getAllMedicine = async (req: Request, res: Response) => {
     try {
-        const result = await medicineService.getAllMedicine();
-        
+        const { featured } = req.query;
+
+        const result = await medicineService.getAllMedicine(
+            featured !== undefined ? featured === "true" : undefined
+        );
+
         res.status(200).json({
             success: true,
             message: "Medicine fetched successfully",
             data: result,
         });
-
     } catch (error: any) {
         res.status(500).json({
             success: false,
             message: error.message || "Failed to find all medicine",
         });
     }
-}
+};
+
 
 const getMedicineById = async (req: Request, res: Response) => {
     try {
 
-        const {idParam} = req.params 
+        const { idParam } = req.params
 
         const result = await medicineService.getMedicineById(idParam as string);
-        
+
         res.status(200).json({
             success: true,
             message: "Medicine fetched successfully",
