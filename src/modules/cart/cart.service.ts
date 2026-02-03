@@ -8,7 +8,7 @@ export const getUserCart = async (userId: string) => {
 };
 
 export const addToCart = async (userId: string, productId: string, quantity: number) => {
-  let cart = await prisma.cart.findFirst({ where: { userId } });
+  let cart = await prisma.cart.findFirst({ where: { userId:userId } });
 
   if (!cart) {
     cart = await prisma.cart.create({

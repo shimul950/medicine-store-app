@@ -6,7 +6,7 @@ import { categoryController } from "./category.controller";
 const router = Router();
 
 
-router.post("/create",routeAuth(UserRole.SELLER), categoryController.createCategory);
+router.post("/create",routeAuth(UserRole.ADMIN), categoryController.createCategory);
 
 router.get("/all",routeAuth(UserRole.ADMIN, UserRole.SELLER, UserRole.USER), categoryController.getAllCategory )
 
