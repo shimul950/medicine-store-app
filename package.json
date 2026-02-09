@@ -2,12 +2,11 @@
   "name": "medicine-store-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tsx watch src/server.ts",
-    "build": "prisma generate"
-,
+    "build": "prisma generate",
     "postinstall": "prisma generate"
   },
   "keywords": [],
@@ -33,6 +32,7 @@
     "express": "^5.2.1",
     "nodemailer": "^7.0.12",
     "pg": "^8.17.2",
-    "tsup": "^8.5.1"
+    "tsup": "^8.5.1",
+    "vercel": "^50.11.0"
   }
 }
