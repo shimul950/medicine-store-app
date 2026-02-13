@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "keywords": [],
-  "author": "",
+  "author": "", 
   "license": "ISC",
   "type": "module",
   "devDependencies": {
