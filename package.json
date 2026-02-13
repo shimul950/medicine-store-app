@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tsx watch src/server.ts",
     "build": "prisma generate && tsup src/server.ts --format cjs --platform node --target node20 --outDir api",
-    "start": "node api/server.cjs",
+    "start": "node start",
     "postinstall": "prisma generate"
   },
   "keywords": [],
