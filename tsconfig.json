@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
+    "target": "ES2023",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "target": "ES2023",
+    "rootDir": "src",
+    "outDir": "api",
     "strict": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "ignoreDeprecations": "5.0"
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

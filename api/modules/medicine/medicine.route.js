@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { medicineController } from "./medicine.controller";
+import routeAuth, { UserRole } from "../../middlewares/route-auth";
+const router = Router();
+router.post("/seller/add", routeAuth(UserRole.SELLER), medicineController.addMedicine);
+router.put("/seller/:idParam", routeAuth(UserRole.SELLER), medicineController.updateMedicine);
+router.delete("/seller/:idParam", routeAuth(UserRole.SELLER), medicineController.deleteMedicine);
+router.get("/", medicineController.getAllMedicine);
+router.get("/:idParam", medicineController.getMedicineById);
+export const medicineRouter = router;
