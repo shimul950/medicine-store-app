@@ -7,6 +7,7 @@ import { medicineRouter } from "./modules/medicine/medicine.route";
 import { userRouter } from "./modules/user/user.route";
 import { orderRouter } from "./modules/order/order.route";
 import { cartRoutes } from "./modules/cart/cart.route";
+import { notFound } from "./middlewares/notfound";
 
 const app:Application = express();
 
@@ -36,4 +37,5 @@ app.get("/", (req, res) => {
 
 
 app.use(errorHandler)
+app.use(notFound)
 export default app;
